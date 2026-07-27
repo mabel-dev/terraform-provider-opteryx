@@ -88,7 +88,9 @@ func (p *OpteryxProvider) Resources(ctx context.Context) []func() resource.Resou
 }
 
 func (p *OpteryxProvider) DataSources(ctx context.Context) []func() datasource.DataSource {
-	return []func() datasource.DataSource{}
+	return []func() datasource.DataSource{
+		NewAccessPoliciesDataSource,
+	}
 }
 
 func New(version string) func() provider.Provider {
